@@ -2,6 +2,7 @@
 pragma solidity ^0.8.19;
 
 import {ContentCreatorNFT} from "./ContentCreatorNFT.sol";
+import {ReentrancyGuard} from "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol";
 
 /*
 *@authors: Pietro Zanotta 
@@ -11,7 +12,7 @@ import {ContentCreatorNFT} from "./ContentCreatorNFT.sol";
 *@contact: pietro.zanotta.02@gmail.com
 */
 
-contract NFTPurchaseManager {
+contract NFTPurchaseManager is ReentrancyGuard {
     /////////////
     // errors //
     /////////////
@@ -187,7 +188,12 @@ contract NFTPurchaseManager {
     function fulfillRequestAndMint(
         uint256 _requestId,
         string memory _URI
-    ) external isCorrectContentCreator(_requestId) isNFTNotMinted(_requestId) {
+    )
+        external
+        isCorrectContentCreator(_requestId)
+        isNFTNotMinted(_requestId)
+        nonReentrant
+    {
         uint256 price = contentCreators[purchaseRequests[_requestId].creatorId]
             .priceInETH;
         address fan = purchaseRequests[_requestId].fanAddress;
@@ -213,7 +219,7 @@ contract NFTPurchaseManager {
     //@input: _requestId -> id of the request
     function refund(
         uint256 requestId
-    ) external isNFTNotMinted(requestId) isCorrectFan(requestId) {
+    ) external isNFTNotMinted(requestId) isCorrectFan(requestId) nonReentrant {
         (bool success, bytes memory data) = purchaseRequests[requestId]
             .fanAddress
             .call{
