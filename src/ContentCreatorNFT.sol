@@ -7,7 +7,7 @@ contract ContentCreatorNFT is ERC721 {
     error BasicNft__TokenUriNotFound();
     mapping(uint256 => string) private s_tokenIdToUri;
 
-    constructor() ERC721("Starconnect", "STC6") {}
+    constructor() ERC721("Starconnect", "STC") {}
 
     function mint(
         address _to,
