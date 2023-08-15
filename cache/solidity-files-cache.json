@@ -1409,8 +1409,8 @@
       }
     },
     "src/ContentCreatorNFT.sol": {
-      "lastModificationDate": 1691908820128,
-      "contentHash": "fa62f03c6b0503f3d587573c32a84f7b",
+      "lastModificationDate": 1692107343610,
+      "contentHash": "f560cb1e592efbf420d6af9f486dddf5",
       "sourceName": "src/ContentCreatorNFT.sol",
       "solcConfig": {
         "settings": {
@@ -1514,10 +1514,162 @@
         }
       }
     },
-    "test/unit/UnitTestNFT.t.sol": {
-      "lastModificationDate": 1691872433389,
+    "test/fuzz/Handler.t.sol": {
+      "lastModificationDate": 1692107379162,
+      "contentHash": "662a521cd4fdf020b3652eeeae72c165",
+      "sourceName": "test/fuzz/Handler.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Address.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "script/DeployNFTPurchaseManager.s.sol",
+        "src/ContentCreatorNFT.sol",
+        "src/NFTPurchaseManager.sol",
+        "test/fuzz/Handler.t.sol"
+      ],
+      "versionRequirement": "^0.8.19",
+      "artifacts": {
+        "Handler": {
+          "0.8.19+commit.7dd6d404.Linux.gcc": "Handler.t.sol/Handler.json"
+        }
+      }
+    },
+    "test/fuzz/InvariantTests.t.sol": {
+      "lastModificationDate": 1692108061996,
+      "contentHash": "b45299e9be077d7db2d79f0d06e1f17c",
+      "sourceName": "test/fuzz/InvariantTests.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Address.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "script/DeployNFTPurchaseManager.s.sol",
+        "src/ContentCreatorNFT.sol",
+        "src/NFTPurchaseManager.sol",
+        "test/fuzz/Handler.t.sol"
+      ],
+      "versionRequirement": "^0.8.19",
+      "artifacts": {
+        "InvariantTests": {
+          "0.8.19+commit.7dd6d404.Linux.gcc": "InvariantTests.t.sol/InvariantTests.json"
+        }
+      }
+    },
+    "test/unit/UnitTests.t..sol": {
+      "lastModificationDate": 1692102754011,
       "contentHash": "9500cacc43f7d797ee7fb31021823c2a",
-      "sourceName": "test/unit/UnitTestNFT.t.sol",
+      "sourceName": "test/unit/UnitTests.t..sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -1585,7 +1737,7 @@
       "versionRequirement": "^0.8.19",
       "artifacts": {
         "TestNFT": {
-          "0.8.19+commit.7dd6d404.Linux.gcc": "UnitTestNFT.t.sol/TestNFT.json"
+          "0.8.19+commit.7dd6d404.Linux.gcc": "UnitTests.t..sol/TestNFT.json"
         }
       }
     }

@@ -5,6 +5,7 @@ import {ERC721} from "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.s
 
 contract ContentCreatorNFT is ERC721 {
     error BasicNft__TokenUriNotFound();
+    mapping(uint256 => address) private s_tokenIdToAddress;
     mapping(uint256 => string) private s_tokenIdToUri;
 
     constructor() ERC721("Starconnect", "STC") {}
@@ -25,5 +26,9 @@ contract ContentCreatorNFT is ERC721 {
             revert BasicNft__TokenUriNotFound();
         }
         return s_tokenIdToUri[_tokenId];
+    }
+
+    function getAddressFromId(uint256 _id) external view returns (address) {
+        return s_tokenIdToAddress[_id];
     }
 }
