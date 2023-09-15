@@ -55,12 +55,15 @@ contract TestNFT is StdCheats, Test {
         vm.startPrank(creator1);
         manager.addContentCreator("First", PRICE_OF_CREATOR);
         vm.stopPrank();
+
         vm.startPrank(creator2);
         manager.addContentCreator("Second", PRICE_OF_CREATOR);
         vm.stopPrank();
+
         vm.startPrank(fan1);
         manager.purchaseNFT{value: PRICE_OF_CREATOR}(0, "message from fan1");
         vm.stopPrank();
+
         vm.startPrank(fan2);
         manager.purchaseNFT{value: PRICE_OF_CREATOR}(0, "message from fan2");
         vm.stopPrank();

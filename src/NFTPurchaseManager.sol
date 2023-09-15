@@ -5,7 +5,7 @@ import {ContentCreatorNFT} from "./ContentCreatorNFT.sol";
 import {ReentrancyGuard} from "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol";
 
 /*
-*@authors: Pietro Zanotta 
+*@author: Pietro Zanotta 
 *@title: NFTPurchaseManger
 *@description: The following contract act as intermediate between a fan and a content creator, allowing the former to
                pay for personalised a video message saved as an NFT. The NFT is deployed at ContentCreatorNFT.sol.
@@ -42,7 +42,7 @@ contract NFTPurchaseManager is ReentrancyGuard {
         uint256 priceInETH; // The amount of ether to be paid by the fan. It is setted by the creator
     }
 
-    uint256 s_creatorId = 0;
+    uint256 s_creatorId;
     uint256 private s_requestCount;
 
     // Mapping to store the purchase requests
@@ -248,5 +248,10 @@ contract NFTPurchaseManager is ReentrancyGuard {
         uint256 _creatorId
     ) external view returns (uint256[] memory) {
         return creatorToRequestIds[_creatorId];
+    }
+
+    // @description: function to get the last creator id created
+    function getCreatorId() external view returns (uint256) {
+        return s_creatorId;
     }
 }
